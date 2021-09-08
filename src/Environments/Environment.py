@@ -19,8 +19,7 @@ You should have received a copy of the GNU Lesser General Public License along w
 import numpy as np
 import gym
 from gym.utils import seeding
-from gym.spaces import Discrete, Box
-# from gym.spaces import Space, Discrete, Box
+from gym.spaces import Space, Discrete, Box
 from . import Preprocessing
 from pymgridbhu.algos.Control import SampleAverageApproximation
 

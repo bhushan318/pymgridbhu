@@ -23,7 +23,7 @@ from pymgridbhu.Environments.Environment import Environment
 import numpy as np
 import gym
 from gym.utils import seeding
-# from gym.spaces import Space, Discrete, Box
+from gym.spaces import Space, Discrete, Box
 
 class MicroGridEnv(Environment):
     """
