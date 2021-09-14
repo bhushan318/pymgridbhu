@@ -1,6 +1,6 @@
 cvxpy
 pandas
-numpy==1.19.4
+numpy
 matplotlib
 plotly
 seaborn
