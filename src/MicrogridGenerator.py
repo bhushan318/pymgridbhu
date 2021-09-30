@@ -112,18 +112,18 @@ class MicrogridGenerator:
     def __init__(
         self,
         nb_microgrid=1,
-        random_seed=42,
+        # random_seed=42,
         size_load=None,
         cost_loss_load=10,
         cost_overgeneration=1,
         cost_co2=0.1,
         timestep=1,
-        arch={"PV": 1, "battery": 1, "genset": None, "grid": None},
+        arch={"PV": 1, "battery": 1, "genset": 0, "grid":1},
         week_grid =0,
         path=str(Path(__file__).parent),
     ):
 
-        np.random.seed(random_seed)
+        # np.random.seed(random_seed)
         # todo manage simulation duration and different timesteps
         # todo create an architecture argument to fix an architetcture (pymgrid10)
         self.microgrids = []  # generate a list of microgrid object
@@ -137,6 +137,7 @@ class MicrogridGenerator:
         self.cost_co2 = cost_co2
         self.arch = arch
         self.week_grid = week_grid
+        # print(self.arch)
 
     ###########################################
     # utility functions
@@ -443,6 +444,7 @@ class MicrogridGenerator:
             self.microgrids.append(self._create_microgrid())
         if verbose == True:
             self.print_mg_parameters()
+            # print(self.arch)
 
     def load(self, scenario):
 
@@ -472,8 +474,9 @@ class MicrogridGenerator:
         else:
             bin_genset = 1
             bin_grid = 1
-
         architecture = self.arch
+
+        # print(architecture)
         if self.size_load is None:
             size_load = np.random.randint(low=100, high=100001)
         else:
